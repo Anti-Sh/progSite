@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     color: #fff;
+    box-sizing: border-box;
 }
 body{
     height: 100vh;
@@ -14,6 +15,11 @@ body{
 }
 .yellow{
     color: #ffc704;
+}
+section{
+    width: 100%;
+    max-width: 1500px;
+    margin: 10px auto 0;
 }
 /*Меню*/
 header{
@@ -111,4 +117,63 @@ header nav{
     color: #ffc704;
     background: transparent;
     transition: all 0.4s;
+}
+
+/* Каталог */
+.section__header{
+    text-align: center;
+    margin: 20px
+}
+.catalog{
+    width: 100%;
+    height: 360px;
+    display: flex;
+    align-items: center;
+    overflow: auto hidden;
+    
+}
+.catalog__item{
+    flex: 0 0 200px;
+    width: 250px;
+    height: 350px;
+    padding: 20px;
+    margin: 0 30px;
+}
+.selected{
+    background-color: rgba(0, 0, 0, 0.300);;
+}
+.item__logo{
+    width: 100%;
+    height: auto;
+}
+.item__logo__inner{
+    width: 100%;
+    height: auto;
+}
+.item__name{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+}
+.item__button{
+    width: 165px;
+    height: 40px;
+    margin: 0 auto;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    font-weight: 550;
+}
+.item__button:hover{
+    background-color: #ffc704;
+    color: #201f24;
+    transition: all 0.3s;
+    border-color: #ffc704;
+}
+.item__button__outer{
+    display: flex;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
 }
