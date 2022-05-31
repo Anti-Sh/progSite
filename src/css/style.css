@@ -1,0 +1,114 @@
+*{
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+body{
+    height: 100vh;
+    background: linear-gradient(to bottom, #38363f, #201f24);
+    overflow: hidden;
+}
+.m_auto{
+    margin: 0 auto;
+}
+.yellow{
+    color: #ffc704;
+}
+/*Меню*/
+header{
+    width: 100%;
+    max-width: 1500px;
+    height: 50px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-between;
+}
+header nav{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav__link{
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    color: #fff;
+}
+.nav__link:hover{
+    color: #ffc704;
+    transition: all 0.5s;
+}
+.menu__img{
+    margin-left: 25px;
+    height: 100%;
+    width: auto;
+}
+/*Главная страница*/
+.intro{
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.intro__img{
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 10px #38363f);
+}
+.intro__inner{
+    width: 50%;
+    height: 100%;
+    margin: 0 15px;
+}
+.intro__header{
+    font-size: 100px;
+}
+.intro__text{
+    font-weight: 300;
+    font-size: 20px;
+}
+.intro__under__text{
+    height: 35px;
+    margin-top: 20px;
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+}
+.intro__button{
+    position: relative;
+    width: 165px;
+    height: 100%;
+    margin: 0 10px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    font-weight: 550;
+}
+.intro__button:hover,
+.intro__button:hover span{
+    color: #38363f;
+    background: #fff;
+    transition: all 0.4s;
+}
+.intro__button span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.yellow__button{
+    background-color: #ffc704;
+    border: 2px solid #ffc704;
+}
+.yellow__button:hover,
+.yellow__button:hover span{
+    color: #ffc704;
+    background: transparent;
+    transition: all 0.4s;
+}
