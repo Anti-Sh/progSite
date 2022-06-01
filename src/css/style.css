@@ -120,6 +120,11 @@ header nav{
 }
 
 /* Каталог */
+.catalog__body{
+    min-height: 100vh;
+    height: auto;
+    overflow-y: auto;
+}
 .section__header{
     text-align: center;
     margin: 20px
@@ -176,4 +181,97 @@ header nav{
     height: 80px;
     justify-content: center;
     align-items: center;
+}
+
+.item__about__outer{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.item__about__inner{
+    width: calc(100% - 350px);
+}
+.about__left{
+    width: 300px;
+}
+.item__about__img{
+    width: 100%;    
+}
+.about__img__inner{
+    width: 100%;
+    height: auto;
+}
+.item__rating__outer{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+.item__row{
+    color: #ffc704;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+}
+.item__row:hover{
+    cursor: pointer;
+}
+.item__rating{
+    position: relative;
+    height: 20px;
+    width: 260px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    background-color: #fff;
+}
+.item__rating__number{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;  
+    color: #201f24;
+    font-weight: 600;
+    z-index: 400;
+}
+.item__rating__inner{
+    height: 100%;
+    width: 90%;
+    margin-right: auto;
+    border: 1px solid #ffc704;
+    border-radius: 10px;
+    background-color: #ffc704;
+    z-index: 200;
+}
+.item__rating__label{
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+}
+.inner__child__description{
+    text-align: justify;
+}
+.inner__child__label{
+    font-weight: 560;
+    color: #ffc704;
+    margin-left: 20px;
+}
+.item__download__button{
+    margin-top: 10px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    font-size: 16px;
+    padding: 8px 23px;
+    border-radius: 8px;
+}
+.item__download__button:hover{
+    background-color: #ffc704;
+    border-color: #ffc704;
+    transition: all 0.5s;
+}
+.locked:hover{
+    cursor:not-allowed;
+    background-color: #ff2a04;
+    border-color: #ff2a04;
 }
