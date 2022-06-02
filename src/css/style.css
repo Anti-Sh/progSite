@@ -34,17 +34,28 @@ header nav{
     width: 50%;
     height: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
 }
 .nav__link{
+    display: block;
     text-decoration: none;
     font-weight: 500;
     font-size: 18px;
+    padding: 0 auto;
     color: #fff;
+    height: 100%;
+    width: 100%;
+    line-height: 50px;
+}
+.nav{
+    height: 100%;
+    width: calc(100% / 3);
+    text-align: center;
 }
 .nav__link:hover{
     color: #ffc704;
+    background-color: #201f24;
     transition: all 0.5s;
 }
 .menu__img{
@@ -290,10 +301,6 @@ header nav{
     transform: translate(-50%, -50%);
     top: 40%;
     left: 50%;
-    
-}
-.reg__page{
-
 }
 .auth__block *{
     display: block;
@@ -351,4 +358,32 @@ header nav{
 }
 .hide{
     display: none;
+}
+/* ПРОФИЛЬ */
+.profile__outer{
+    position: relative;
+}
+.profile{
+    position: absolute;
+    background-color: #201f24;
+    width: 100%;
+}
+.profile__label{
+    margin-top: 10px;
+    font-size: 20px;
+}
+.profile__param{
+    color: #ffc704;
+    font-size: 18px;
+}
+.profile__button{
+    background-color: #ff2a04;
+    border: 2px solid #ff2a04;
+    border-radius: 5px;
+    margin: 15px 0;
+    font-size: 18px;
+    padding: 2px 20px;
+}
+.profile__button{
+    cursor: pointer;
 }
