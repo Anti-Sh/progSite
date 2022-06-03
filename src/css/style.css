@@ -367,6 +367,7 @@ header nav{
     position: absolute;
     background-color: #201f24;
     width: 100%;
+    z-index: 1000;
 }
 .profile__label{
     margin-top: 10px;
@@ -386,4 +387,13 @@ header nav{
 }
 .profile__button{
     cursor: pointer;
+}
+.active{
+    color: #ffc704;
+    background-color: #201f24;
+}
+#hide__button{
+    background-color: transparent;
+    border: 2px solid #fff;
+    margin-bottom: 0px;
 }

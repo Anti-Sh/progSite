@@ -11,25 +11,7 @@
     <title>Редактор.Ру  | Каталог</title>
 </head>
 <body class="catalog__body">
-    <header>
-        <img src="src/img/logo.png" class="menu__img inline">
-        <nav>
-            <div class="nav"><a href="index.html" class="nav__link">Главная</a></div>
-            <div class="nav"><a href="" class="nav__link">Каталог</a></div>
-            <div class="nav profile__outer">
-                <a href="" class="nav__link">Профиль</a>
-                <div class="profile hide">
-                    <div class="profile__label">Имя пользователя</div>
-                    <div class="profile__param">Lorem_esad</div>
-                    <div class="profile__label">Почта</div>
-                    <div class="profile__param">Lorem_esad@text.te</div>
-                    <div class="profile__label">Дата регистрации</div>
-                    <div class="profile__param">21.12.2022</div>
-                    <button class="profile__button">Выход</button>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <? require "php_modules/header.php" ?>
     <section>
         <h1 class="section__header">Приложения-редакторы</h1>
         <div class="catalog">

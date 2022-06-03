@@ -11,14 +11,7 @@
     <title>Редактор.Ру</title>
 </head>
 <body>
-    <header>
-        <img src="src/img/logo.png" class="menu__img inline">
-        <nav>
-            <div class="nav"><a href="" class="nav__link">Главная</a></div>
-            <div class="nav"><a href="catalog.html" class="nav__link">Каталог</a></div>
-            <div class="nav"><a href="" class="nav__link">Профиль</a></div>
-        </nav>
-    </header>
+    <? require "php_modules/header.php" ?>
     <div class="intro m_auto">
         <div class="intro__inner">
             <h1 class="intro__header">
