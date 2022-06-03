@@ -21,8 +21,8 @@
                 Любая работа начинается с того, что тебя окружает
             </h3>
             <div class="intro__under__text">
-                <a class="intro__button " href="catalog.html"><span>Подробнее</span></a>
-                <a class="intro__button yellow__button" href="auth.html"><span>Присоединиться</span></a>
+                <a class="intro__button " href="catalog.php"><span>Подробнее</span></a>
+                <a class="intro__button yellow__button" href="auth.php"><span>Присоединиться</span></a>
             </div>
         </div>
         <div class="intro__inner">

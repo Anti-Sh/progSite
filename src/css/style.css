@@ -144,12 +144,12 @@ header nav{
     width: 100%;
     height: 360px;
     display: flex;
-    align-items: center;
+    align-content: center;
     overflow: auto hidden;
     
 }
 .catalog__item{
-    flex: 0 0 200px;
+    flex: 0 0 200;
     width: 250px;
     height: 350px;
     padding: 20px;
@@ -248,7 +248,7 @@ header nav{
 }
 .item__rating__inner{
     height: 100%;
-    width: 90%;
+    width: 100%;
     margin-right: auto;
     border: 1px solid #ffc704;
     border-radius: 10px;
@@ -269,7 +269,10 @@ header nav{
     margin-left: 20px;
 }
 .item__download__button{
-    margin-top: 10px;
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    width: 130px;
     background-color: transparent;
     border: 2px solid #fff;
     font-size: 16px;
@@ -281,8 +284,10 @@ header nav{
     border-color: #ffc704;
     transition: all 0.5s;
 }
+.locked{
+    opacity: 0;
+}
 .locked:hover{
-    cursor:not-allowed;
     background-color: #ff2a04;
     border-color: #ff2a04;
 }
