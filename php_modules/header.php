@@ -1,9 +1,9 @@
 <?
-    session_start();
-    $k = 0;
-    $href = "auth.php";
-    $id = "";
-    if(isset($_SESSION["user"])){
+    session_start(); // начало сессии
+    $k = 0; // значение по умолчанию
+    $href = "auth.php"; // ссылка по умолчанию
+    $id = ""; // Id по умолчанию
+    if(isset($_SESSION["user"])){ // изменения ранее объявленных переменных, если пользователь авторизирован
         $k = 1;
         $href = "";
         $id = ' id="profile_text"';

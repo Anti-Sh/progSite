@@ -16,15 +16,15 @@
         <h1 class="section__header">Приложения-редакторы</h1>
         <div class="catalog">
             <?
-            require_once "php_core/connect.php";
-            $id = -1;
+            require_once "php_core/connect.php"; // подключение к БД
+            $id = -1; // значение по умолчанию
             if (isset($_POST)){
-                $id = $_POST["id"];
-                $class = " selected";
+                $id = $_POST["id"]; // Значение, если форма была отправлена
+                $class = " selected";  // Значение, если форма была отправлена
             }
-            $sql = "SELECT `editor_id`, `editor_name`, `img_name` FROM `editors`";
-            $query = mysqli_query($connect, $sql);
-            while( $row = mysqli_fetch_array($query)):?>
+            $sql = "SELECT `editor_id`, `editor_name`, `img_name` FROM `editors`"; // Взятие всех редакторов из БД
+            $query = mysqli_query($connect, $sql); // Выполнение запроса
+            while( $row = mysqli_fetch_array($query)):?> 
             <form action="catalog.php" method="post">
                 <div class="catalog__item<? if ($id == $row[0]) { echo $class; }?>">
                     <div class="item__logo">
@@ -40,7 +40,7 @@
             <? endwhile; ?>
         </div>
         <? 
-        if (isset($_POST)):
+        if (isset($_POST)): // Если форма отправлена, вывод всей информации для определенного товара
             $sql = "SELECT * FROM editors e INNER JOIN makers m ON e.maker_id=m.maker_id INNER JOIN `fields` ON e.field_id=`fields`.`field_id` WHERE e.editor_id = '$id'";
             $query = mysqli_query($connect, $sql);
             while( $row = mysqli_fetch_assoc($query) ):
@@ -55,11 +55,11 @@
                     <div class="item__rating__label">Рейтинг</div>
                     <div class="item__rating__outer">
                         <?
-                            $status = " locked";
-                            $url = "";
+                            $status = " locked"; // значение по умолчанию
+                            $url = ""; // значение по умолчанию
                             if (isset($_SESSION["user"])){
-                                $status = "";
-                                $url = $row["download_link"];
+                                $status = ""; // значение, если пользователь авторизирован
+                                $url = $row["download_link"]; // значение, если пользователь авторизирован
                             }
                         ?>
                         <form action="php_core/rate.php" method="post">

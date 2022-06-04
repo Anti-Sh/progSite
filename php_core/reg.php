@@ -1,50 +1,48 @@
 <?php
-session_start();
-require_once "connect.php";
+session_start(); // начало сессии
+require_once "connect.php"; // подключение к БД
 
-$login = $_POST["reg_login"];
-$email = $_POST["reg_mail"];
-$password1 = $_POST["reg_password1"];
-$password2 = $_POST["reg_password2"];
+$login = $_POST["reg_login"]; // логин, полученный после отправки формы
+$email = $_POST["reg_mail"]; // почта, полученная после отправки формы
+$password1 = $_POST["reg_password1"]; // пароль, полученный после отправки формы
+$password2 = $_POST["reg_password2"]; // подтверждение пароля, полученное после отправки формы
 
-$_SESSION["hide_mode"] = [" hide", ""];
+$_SESSION["hide_mode"] = [" hide", ""]; // запись в сессию видимости нужного блока
 
-if ($login === '') {
-    $_SESSION["error"] = 'Логин не введен';
-    header('Location: ../auth.php');
+if ($login === '') { // Если логин не введен
+    $_SESSION["error"] = 'Логин не введен'; // Запись ошибки в сессию
+    header('Location: ../auth.php'); // Перенаправление на страницу авторизации
     die;
 }
-if ($email === '') {
-    $_SESSION["error"] = 'Почта не введена';
-    header('Location: ../auth.php');
+if ($email === '') { // Если почта не введена
+    $_SESSION["error"] = 'Почта не введена'; // Запись ошибки в сессию
+    header('Location: ../auth.php'); // Перенаправление на страницу авторизации
     die;
 }
-if ($password1 === '') {
-    $_SESSION["error"] = 'Пароль не введен';
-    header('Location: ../auth.php');
+if ($password1 === '') { // Если пароль не введен
+    $_SESSION["error"] = 'Пароль не введен'; // Запись ошибки в сессию
+    header('Location: ../auth.php'); // Перенаправление на страницу авторизации
     die;
 }
-if ($password2 === '') {
-    $_SESSION["error"] = 'Подтверждение пароля не введено';
-    header('Location: ../auth.php');
+if ($password2 === '') { // Если пароль2 не введен
+    $_SESSION["error"] = 'Подтверждение пароля не введено'; // Запись ошибки в сессию
+    header('Location: ../auth.php'); // Перенаправление на страницу авторизации
     die;
 }
-if ($password1 !== $password2) {
-    $_SESSION["error"] = 'Пароли не совпадают';
-    header('Location: ../auth.php');
+if ($password1 !== $password2) { // Если пароли не совпадают
+    $_SESSION["error"] = 'Пароли не совпадают'; // Запись ошибки в сессию
+    header('Location: ../auth.php'); // Перенаправление на страницу авторизации
     die;
 }
 
 $check_user = mysqli_query($connect, "SELECT `user_id` FROM `users` WHERE `username` = '$login' OR `email` = '$email'");
 if (mysqli_num_rows($check_user) > 0) { // Проверка на соответствие введенных данных
     $_SESSION["error"] = 'Аккаунт с таким логином или почтой существует';
-    header('Location: ../auth.php');
+    header('Location: ../auth.php'); // Перенаправление на страницу авторизации
     die;
 }
-$date = date("Y-m-d");
+$date = date("Y-m-d"); // Текущая дата
 mysqli_query($connect, "INSERT INTO `users`(`user_id`, `username`, `email`, `password`, `reg_date`) VALUES (NULL, '$login', '$email', '$password1', '$date')");
 $_SESSION["hide_mode"] = ["", " hide"];
 
-header('Location: ../auth.php');
-
-
+header('Location: ../auth.php'); // Перенаправление на страницу авторизации 

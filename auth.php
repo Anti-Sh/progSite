@@ -13,8 +13,7 @@
 <body>
     <? 
         require "php_modules/header.php"; 
-        if (isset($_SESSION["user"])) header('Location: ../index.php');
-        echo $_SESSION["user"];
+        if (isset($_SESSION["user"])) header('Location: ../index.php'); // если пользователь авторизирован, то перенаправляет на главную
     ?>
     <section class="auth__page">
         <div class="auth__block">
@@ -35,7 +34,7 @@
                 </form>
             </div>
             <?
-                $mode = isset($_SESSION["hide_mode"][1]) ? $_SESSION["hide_mode"][1] : " hide"
+                $mode = isset($_SESSION["hide_mode"][1]) ? $_SESSION["hide_mode"][1] : " hide";
             ?>
             <div class="reg__page<?=$mode?>" id="reg__page">
                 <form action="php_core/reg.php" method="post">

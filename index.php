@@ -22,9 +22,9 @@
             </h3>
             <div class="intro__under__text">
                 <?
-                    $status = "";
+                    $status = ""; // Значение по умолчанию
                     if(isset($_SESSION["user"])){
-                        $status = " hide";
+                        $status = " hide"; // Значение, если пользователь авторизирован
                     }
                 ?>
                 <a class="intro__button " href="catalog.php"><span>Подробнее</span></a>
