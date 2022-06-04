@@ -54,12 +54,26 @@
                     </div>
                     <div class="item__rating__label">Рейтинг</div>
                     <div class="item__rating__outer">
-                        <button class="item__row">▼</button>
+                        <?
+                            $status = " locked";
+                            $url = "";
+                            if (isset($_SESSION["user"])){
+                                $status = "";
+                                $url = $row["download_link"];
+                            }
+                        ?>
+                        <form action="php_core/rate.php" method="post">
+                            <input type="number" name="decrement" class="hide" value="-1">
+                            <button type="submit" name="decr_button" value="<?=$row["editor_id"]?>" class="item__row<?=$status?>">▼</button>
+                        </form>
                         <div class="item__rating">
                             <span class="item__rating__number"><?=$row["user_rating"]?></span>
                             <div class="item__rating__inner"></div>
                         </div>
-                        <button class="item__row">▲</button>
+                        <form action="php_core/rate.php" method="post">
+                            <input type="number" name="increment" class="hide" value="-1">
+                            <button type="submit" name="incr_button" value="<?=$row["editor_id"]?>" class="item__row<?=$status?>">▲</button>
+                        </form>
                     </div>
                 </div>
                 <div class="item__about__inner">
@@ -85,14 +99,6 @@
                     <div class="about__inner_child">
                         <h3 class="inner__child__header">Описание</h3>
                         <p class="inner__child__description"><?=$row["description"]?></p>
-                        <?
-                            $status = " locked";
-                            $url = "";
-                            if (isset($_SESSION["user"])){
-                                $status = "";
-                                $url = $row["download_link"];
-                            }
-                        ?>
                         <a class="item__download__button<?=$status?>" href="<?=$url?>">Скачать</a>
                     </div>
                     

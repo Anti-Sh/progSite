@@ -231,7 +231,7 @@ header nav{
 }
 .item__rating{
     position: relative;
-    height: 20px;
+    height: 30px;
     width: 260px;
     border: 1px solid #fff;
     border-radius: 10px;
@@ -241,7 +241,8 @@ header nav{
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
-    left: 50%;  
+    left: 50%;
+    font-size: 24px;  
     color: #201f24;
     font-weight: 600;
     z-index: 400;
@@ -258,24 +259,34 @@ header nav{
 .item__rating__label{
     width: 100%;
     text-align: center;
+    font-size: 20px;
     font-weight: 600;
 }
+/*Блок с описанием приложений*/
 .inner__child__description{
     text-align: justify;
+    font-size: 18px;
+}
+.inner__child__header{
+    font-size: 20px;
+}
+.inner__child__spec{
+    font-size: 20px;
 }
 .inner__child__label{
+    font-size: 18px;
     font-weight: 560;
     color: #ffc704;
     margin-left: 20px;
 }
 .item__download__button{
     display: block;
-    margin-top: 20px;
+    margin-top: 24px;
     text-align: center;
-    width: 130px;
     background-color: transparent;
     border: 2px solid #fff;
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: 600;
     padding: 8px 23px;
     border-radius: 8px;
 }
@@ -288,6 +299,7 @@ header nav{
     opacity: 0;
 }
 .locked:hover{
+    cursor: default;
     background-color: #ff2a04;
     border-color: #ff2a04;
 }
